@@ -108,7 +108,7 @@ define(function(require, exports, module) {
                     win: 'Shift-Ctrl-A'
                 },
                 isAvailable: function(editor) {
-                    return !editor.getSelection().isEmpty();
+                    return !(editor.getSelection().isEmpty());
                 },
                 exec: function(editor) {
                     runEmmetAction('wrap_with_abbreviation', editor);
