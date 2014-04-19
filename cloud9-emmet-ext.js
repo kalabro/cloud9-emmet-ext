@@ -81,7 +81,7 @@ define(function(require, exports, module) {
                 }
             });
 
-            this.nodes.push(menus.addItemByPath('Tools/Emmet/Wrap with Abbreviation', mnuItemExpand, 915));
+            this.nodes.push(menus.addItemByPath('Tools/Emmet/Wrap with Abbreviation', mnuItemWrap, 915));
 
             commands.addCommand({
                 name: 'expand',
@@ -108,7 +108,7 @@ define(function(require, exports, module) {
                     win: 'Shift-Ctrl-A'
                 },
                 isAvailable: function(editor) {
-                    return true;
+                    return editor.getSelection().isEmpty();
                 },
                 exec: function(editor) {
                     runEmmetAction('wrap_with_abbreviation', editor);
