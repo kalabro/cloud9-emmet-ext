@@ -72,6 +72,16 @@ define(function(require, exports, module) {
             });
 
             this.nodes.push(menus.addItemByPath('Tools/Emmet/Expand Abbreviation', mnuItemExpand, 910));
+            
+            // Emmet > Wrap with Abbreviation
+            var mnuItemWrap = new apf.item({
+                command: 'wrap',
+                onclick: function(editor) {
+                    runEmmetAction('wrap_with_abbreviation', editor);
+                }
+            });
+
+            this.nodes.push(menus.addItemByPath('Tools/Emmet/Wrap with Abbreviation', mnuItemExpand, 915));
 
             commands.addCommand({
                 name: 'expand',
