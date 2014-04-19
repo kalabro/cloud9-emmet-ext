@@ -88,6 +88,22 @@ define(function(require, exports, module) {
                     runEmmetAction('expand_abbreviation', editor);
                 }
             });
+            
+            commands.addCommand({
+                name: 'wrap',
+                hint: 'wraps content with abbreviation',
+                msg: 'Wrapping with abbreviation.',
+                bindKey: {
+                    mac: 'Command-Shift-A',
+                    win: 'Shift-Ctrl-A'
+                },
+                isAvailable: function(editor) {
+                    return true;
+                },
+                exec: function(editor) {
+                    runEmmetAction('wrap_with_abbreviation', editor);
+                }
+            });
 
             ext.initExtension(this);
         },
